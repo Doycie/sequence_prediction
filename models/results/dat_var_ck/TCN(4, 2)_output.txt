@@ -1,0 +1,113 @@
+Per id accuracy: 0.79/2566, 0.96/2566, 0.0/2052, 1.0/2566, 0.5/2052, 0.11/2564, 0.58/2052, 0.0/5, 0.0/64, 0.0/256, 0.0/256, 0.0/256, 0.0/256, 0.0/32, 0.0/26, 0.0/256, 0.0/257, 0.0/256, 0.97/1283, 0.0/1026, 0.0/1026, 0.81/1026, 0.89/1026, 0.37/1026, 0.03/1283, 0.91/2566, 0.9/1026, 0.0/855, 0.11/2567, 0.69/1283, 0.0/257, 0.0/854, 0.71/1026, 0.72/1027, 0.36/513, 0.0/513, 0.0/513, 0.0/1283, 0.0/13, 0.0/257, 0.0/13, 0.0/102, 0.57/1027, 0.0/514, 0.0/514, 0.0/257, 0.0/513, 0.0/257, 0.0/514, 0.0/514, 0.0/513, 0.0/513, 0.0/257, 0.0/256, 0.05/257, 0.24/257, 0.53/257, 0.47/257, 0.0/103, 0.0/102, 0.0/102, 0.0/102, 0.0/102, 0.0/102, 0.0/1280, 0.0/51, 0.0/51, 0.0/51, 0.0/51, 0.0/26, 0.0/26, 0.0/51, 0.0/25, 0.0/25, 0.0/25, 0.0/25, 0.0/25, 0.0/26, 0.0/26, 0.0/26, 0.0/51, 0.0/25, 0.0/25, 0.0/26, 0.0/26, 
+ Average duration: 1583.64 us
+Amount of times correct: 
+19978 out of 49936Percentage correct: 0.40
+MSE loss: 
+2715.894042500941=================================================================
+Layer (type:depth-idx)                   Param #
+=================================================================
+TCN                                      --
+├─TemporalConvNet: 1-1                   --
+│    └─Sequential: 2-1                   --
+│    │    └─TemporalBlock: 3-1           29,240
+│    │    └─TemporalBlock: 3-2           29,240
+│    │    └─TemporalBlock: 3-3           29,240
+│    │    └─TemporalBlock: 3-4           29,240
+├─Linear: 1-2                            7,310
+├─Sigmoid: 1-3                           --
+=================================================================
+Total params: 124,270
+Trainable params: 124,270
+Non-trainable params: 0
+=================================================================TCN(
+  (tcn): TemporalConvNet(
+    (network): Sequential(
+      (0): TemporalBlock(
+        (conv1): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(1,))
+        (chomp1): Chomp1d()
+        (relu1): ReLU()
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (conv2): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(1,))
+        (chomp2): Chomp1d()
+        (relu2): ReLU()
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (net): Sequential(
+          (0): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(1,))
+          (1): Chomp1d()
+          (2): ReLU()
+          (3): Dropout(p=0.1, inplace=False)
+          (4): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(1,))
+          (5): Chomp1d()
+          (6): ReLU()
+          (7): Dropout(p=0.1, inplace=False)
+        )
+        (relu): ReLU()
+      )
+      (1): TemporalBlock(
+        (conv1): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(2,), dilation=(2,))
+        (chomp1): Chomp1d()
+        (relu1): ReLU()
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (conv2): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(2,), dilation=(2,))
+        (chomp2): Chomp1d()
+        (relu2): ReLU()
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (net): Sequential(
+          (0): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(2,), dilation=(2,))
+          (1): Chomp1d()
+          (2): ReLU()
+          (3): Dropout(p=0.1, inplace=False)
+          (4): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(2,), dilation=(2,))
+          (5): Chomp1d()
+          (6): ReLU()
+          (7): Dropout(p=0.1, inplace=False)
+        )
+        (relu): ReLU()
+      )
+      (2): TemporalBlock(
+        (conv1): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(4,), dilation=(4,))
+        (chomp1): Chomp1d()
+        (relu1): ReLU()
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (conv2): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(4,), dilation=(4,))
+        (chomp2): Chomp1d()
+        (relu2): ReLU()
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (net): Sequential(
+          (0): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(4,), dilation=(4,))
+          (1): Chomp1d()
+          (2): ReLU()
+          (3): Dropout(p=0.1, inplace=False)
+          (4): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(4,), dilation=(4,))
+          (5): Chomp1d()
+          (6): ReLU()
+          (7): Dropout(p=0.1, inplace=False)
+        )
+        (relu): ReLU()
+      )
+      (3): TemporalBlock(
+        (conv1): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(8,), dilation=(8,))
+        (chomp1): Chomp1d()
+        (relu1): ReLU()
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (conv2): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(8,), dilation=(8,))
+        (chomp2): Chomp1d()
+        (relu2): ReLU()
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (net): Sequential(
+          (0): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(8,), dilation=(8,))
+          (1): Chomp1d()
+          (2): ReLU()
+          (3): Dropout(p=0.1, inplace=False)
+          (4): Conv1d(85, 85, kernel_size=(2,), stride=(1,), padding=(8,), dilation=(8,))
+          (5): Chomp1d()
+          (6): ReLU()
+          (7): Dropout(p=0.1, inplace=False)
+        )
+        (relu): ReLU()
+      )
+    )
+  )
+  (linear): Linear(in_features=85, out_features=85, bias=True)
+  (sig): Sigmoid()
+)

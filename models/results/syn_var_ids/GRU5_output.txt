@@ -1,0 +1,19 @@
+Per id accuracy: 0.4/5976, 0.79/7643, 0.93/4865, 0.96/3284, 0.42/2163, 0.25/1004, 
+ Average duration: 747.34 us
+Amount of times correct: 
+17230 out of 24936Percentage correct: 0.69
+MSE loss: 
+65088.880579948425=================================================================
+Layer (type:depth-idx)                   Param #
+=================================================================
+GRU                                      --
+├─GRU: 1-1                               252
+├─Linear: 1-2                            42
+=================================================================
+Total params: 294
+Trainable params: 294
+Non-trainable params: 0
+=================================================================GRU(
+  (gru): GRU(6, 6, dropout=0.1)
+  (fc): Linear(in_features=6, out_features=6, bias=True)
+)

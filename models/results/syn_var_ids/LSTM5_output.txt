@@ -1,0 +1,19 @@
+Per id accuracy: 0.37/5976, 0.78/7643, 0.95/4865, 0.97/3284, 0.68/2163, 0.21/1004, 
+ Average duration: 742.56 us
+Amount of times correct: 
+17606 out of 24936Percentage correct: 0.71
+MSE loss: 
+120388.48559784889=================================================================
+Layer (type:depth-idx)                   Param #
+=================================================================
+LSTM                                     --
+├─LSTM: 1-1                              336
+├─Linear: 1-2                            42
+=================================================================
+Total params: 378
+Trainable params: 378
+Non-trainable params: 0
+=================================================================LSTM(
+  (lstm): LSTM(6, 6, dropout=0.1)
+  (linear): Linear(in_features=6, out_features=6, bias=True)
+)

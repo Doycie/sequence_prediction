@@ -1,0 +1,69 @@
+Per id accuracy: 0.52/5976, 0.83/7643, 0.67/4865, 0.92/3284, 0.0/2163, 0.0/1004, 
+ Average duration: 1001.99 us
+Amount of times correct: 
+15732 out of 24936Percentage correct: 0.63
+MSE loss: 
+3351.7982622484024=================================================================
+Layer (type:depth-idx)                   Param #
+=================================================================
+TCN                                      --
+├─TemporalConvNet: 1-1                   --
+│    └─Sequential: 2-1                   --
+│    │    └─TemporalBlock: 3-1           168
+│    │    └─TemporalBlock: 3-2           168
+├─Linear: 1-2                            42
+├─Sigmoid: 1-3                           --
+=================================================================
+Total params: 378
+Trainable params: 378
+Non-trainable params: 0
+=================================================================TCN(
+  (tcn): TemporalConvNet(
+    (network): Sequential(
+      (0): TemporalBlock(
+        (conv1): Conv1d(6, 6, kernel_size=(2,), stride=(1,), padding=(1,))
+        (chomp1): Chomp1d()
+        (relu1): ReLU()
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (conv2): Conv1d(6, 6, kernel_size=(2,), stride=(1,), padding=(1,))
+        (chomp2): Chomp1d()
+        (relu2): ReLU()
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (net): Sequential(
+          (0): Conv1d(6, 6, kernel_size=(2,), stride=(1,), padding=(1,))
+          (1): Chomp1d()
+          (2): ReLU()
+          (3): Dropout(p=0.1, inplace=False)
+          (4): Conv1d(6, 6, kernel_size=(2,), stride=(1,), padding=(1,))
+          (5): Chomp1d()
+          (6): ReLU()
+          (7): Dropout(p=0.1, inplace=False)
+        )
+        (relu): ReLU()
+      )
+      (1): TemporalBlock(
+        (conv1): Conv1d(6, 6, kernel_size=(2,), stride=(1,), padding=(2,), dilation=(2,))
+        (chomp1): Chomp1d()
+        (relu1): ReLU()
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (conv2): Conv1d(6, 6, kernel_size=(2,), stride=(1,), padding=(2,), dilation=(2,))
+        (chomp2): Chomp1d()
+        (relu2): ReLU()
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (net): Sequential(
+          (0): Conv1d(6, 6, kernel_size=(2,), stride=(1,), padding=(2,), dilation=(2,))
+          (1): Chomp1d()
+          (2): ReLU()
+          (3): Dropout(p=0.1, inplace=False)
+          (4): Conv1d(6, 6, kernel_size=(2,), stride=(1,), padding=(2,), dilation=(2,))
+          (5): Chomp1d()
+          (6): ReLU()
+          (7): Dropout(p=0.1, inplace=False)
+        )
+        (relu): ReLU()
+      )
+    )
+  )
+  (linear): Linear(in_features=6, out_features=6, bias=True)
+  (sig): Sigmoid()
+)
